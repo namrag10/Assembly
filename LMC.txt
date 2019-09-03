@@ -1,0 +1,197 @@
+-------------------------------------------------------------
+
+	adding test
+
+[Enter these in the cells]
+
+90  91  92  93   94  95  96  97  98  99
+
+003 013 006 061  077 079 078 071 058 041
+
+Code:
+
+	LDA 90
+        out
+        ADD 92
+        sto 80
+        LDA 91
+        otc
+        LDA 92
+        out
+        LDA 91
+        otc
+        LDA 93
+        otc
+        inp
+        sto 81
+        sub 80
+        BRZ 27
+        LDA 91
+        otc
+        LDA 94
+        otc
+        LDA 95
+        otc
+        LDA 96
+        otc
+        LDA 97
+        otc
+        BRA 0
+        LDA 91
+        otc
+        LDA 98
+        otc
+        LDA 99
+        otc
+	HLT
+--------------------------------------------------------------
+Calculator
+
+
+                BRA 10
+        DAT 01
+        DAT 01
+        DAT 02
+        DAT 03
+        DAT 04
+        DAT 40
+        DAT 42
+        DAT 41
+        DAT 05
+        LDA 1
+        out
+        LDA 6
+        otc
+        LDA 7
+        otc
+        LDA 8
+Outputs otc
+        LDA 1
+        SUB 2
+OneChek BRZ 25
+        lda 7
+        add 3
+        STO 7
+Plusone BRA 28
+-       LDA 7
+-       ADD 2
+        Sto 7
+Numpone LDA 1
+-       ADD 2
+        Sto 1
+        lda 1
+        SUB 9
+        BRZ 35
+        BRA 00
+        inp
+        sto 99
+One     LDA 2
+        SUB 99
+        BRZ 63
+Two     LDA 3
+        SUB 99
+        BRZ 49
+Three   LDA 4
+        SUB 99
+        BRZ 55
+Four    LDA 5
+        SUB 99
+        BRZ 80
+Plus    inp
+        sto 99
+        inp
+        add 99
+        out
+        BRA 98
+Minus   inp
+        sto 99
+        inp
+        sto 98
+        LDA 99
+        sub 98
+        out
+        BRA 98
+Multi   inp
+        sto 99
+        inp
+        sto 98
+        LDA 97
+        ADD 99
+        sto 97
+        LDA 98
+        sub 02
+        sto 98
+        BRZ 75
+        BRA 67
+        LDA 97
+        out
+        sub 97
+        sto 97
+        BRA 98
+Divide  inp
+        sto 97
+        LDA 99
+        STO 98
+        inp
+        sto 99
+        LDA 97
+        SUB 99
+        sto 97
+        LDA 98
+        ADD 2
+        STO 98
+        LDA 97
+        BRP 86
+        LDA 98
+        sub 2
+        out
+
+***************************
+****DIVISION NEEDS WORK****
+***************************
+
+--------------------------------------
+Multiplacation calc
+
+96
+001
+
+        inp
+        sto 99
+        inp
+        sto 98
+        LDA 97
+        ADD 99
+        sto 97
+        LDA 98
+        sub 96
+        sto 98
+        BRZ 12
+        BRA 04
+        LDA 97
+        out
+
+---------------------------------
+Divide Calc
+
+95
+001
+
+        inp
+        sto 99
+        LDA 94
+        STO 96
+        inp
+        sto 98
+        LDA 99
+        SUB 98
+        sto 99
+        LDA 96
+        ADD 95
+        STO 96
+        LDA 99
+        BRP 06
+        LDA 96
+        sub 95
+        out
+---------------------------------
